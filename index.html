@@ -56,8 +56,9 @@
 
 <body>
     <script>
-        console.log(intToRGB(hashCode("{{ ansible_fqdn }}")));
-        localbgcolor = "#" + intToRGB(hashCode("{{ ansible_fqdn }}"));
+        random = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+        console.log(intToRGB(hashCode(random)));
+        localbgcolor = "#" + intToRGB(hashCode(random));
         document.body.style.backgroundColor = localbgcolor;
         var rgb = hexToRgb(localbgcolor);
         console.log(rgb);
